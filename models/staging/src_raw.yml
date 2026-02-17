@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: RAW_STAGE
+    database: ETL_DEV
+    schema: RAW_STAGE
+    tables:
+      - name: PEOPLE_DATA
+        description: "This table contains raw data about people, including their names, ages, and locations. It serves as the initial staging area for data before it is transformed and loaded into the core layer."
+        columns: 
+          - name : INDEX_	
+            tests:
+              - not_null
+              - unique
+          - name : USER_ID
+            tests:
+              - not_null
+          - name : SEX
+            tests:
+              - not_null
+              - accepted_values:
+                  values: ['Male', 'Female']
+          - name : EMAIL
+            tests:
+              - not_null
+          - name : PHONE
+            tests:
+              - not_null
+          - name : DATEOFBIRTH
+            tests:
+              - not_null
+          - name : JOBTITLE
+            tests:
+              - not_null
+          - name : LOAD_DATE	
+            tests:
+              - not_null
+  

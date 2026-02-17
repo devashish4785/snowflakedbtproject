@@ -1,0 +1,13 @@
+
+target/
+dbt_packages/
+logs/
+
+# Python
+__pycache__/
+*.pyc
+snowflakeEnv/
+
+# Secrets
+.env
+profiles.yml
